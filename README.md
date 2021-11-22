@@ -54,67 +54,70 @@ go build
 Step 4: Deploy the chaincode;
 1. Change into test-network directory
    
-		```bash
-        cd landregistry/test-network
-        ```
+```bash
+cd landregistry/test-network
+```
+
 2. Bring the Network Down
-   
-		```bash
-        ./network.sh down
-        ```
+
+```bash
+./network.sh down
+```
 
 3. Bring the network Up
    
-		```bash
-        ./network.sh up
-        ```
+```bash
+./network.sh up
+```
 
 4. Create channel using createChannel
    
-		```bash
-        ./network.sh createChannel
-        ```
+```bash
+./network.sh createChannel
+```
 
 5. Check docker containers
    
-		```bash
-        docker ps -a
-        ```
+```bash
+docker ps -a
+```
 
 6. Deploy Chaincode
    
-		```bash
-        ./network.sh deployCC -ccn landreg -ccl go -ccp ../chaincode -cci InitLedger
-        ```
+```bash
+./network.sh deployCC -ccn landreg -ccl go -ccp ../chaincode -cci InitLedger
+```
 
 7. Prepare to use command line arguments
    
-		```bash
-        export PATH=${PWD}/../bin:$PATH
-
-		export FABRIC_CFG_PATH=$PWD/../config/
-        ```
+```bash
+export PATH=${PWD}/../bin:$PATH
+```
+	
+```bash
+export FABRIC_CFG_PATH=$PWD/../config/
+```
 
 8. Set the Endorsing peers information
    
-		```bash
-        source ./scripts/setPeerConnectionParam.sh 1 2
-        ```
+```bash
+source ./scripts/setPeerConnectionParam.sh 1 2
+```
 
 9. Set the context for Org1
     
-		```bash
-        source ./scripts/setOrgPeerContext.sh 1
-        ```
+```bash
+source ./scripts/setOrgPeerContext.sh 1
+```
 
 ### Creating a Test-Network, Channel and Installing the chaincode
 
 10. Quert the Property - using QueryProp function - one example below;
 
 
-		```bash
-        peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n landreg $PEER_CONN_PARAMS -c '{"function":"QueryProp","Args":["PROP1"]}'
-        ```
+```bash
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n landreg $PEER_CONN_PARAMS -c '{"function":"QueryProp","Args":["PROP1"]}'
+```
 
 ### Output will look like below;
 
