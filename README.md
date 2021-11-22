@@ -121,18 +121,9 @@ peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.exa
 
 ### Output will look like below;
 
-#### Query to fetch details of property[1] in the array;
-
-```JPEG
-
-~/myprojects/landreghlf/test-network$ peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n landreg $PEER_CONN_PARAMS -c '{"function":"QueryProp","Args":["PROP1"]}'
-```
-
-#### Output will look like below;
-
 ```JPEG
 
 2021-11-22 14:07:46.156 IST [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200 payload:"{\"proptype\":\"Ind House\",\"propcity\":\"Bengaluru\",\"propstate\":\"KA\",\"propsqft\":\"3200\",\"propowner\":\"Abraham\"}" 
-(base) dev@devm-laptop:~/myprojects/landreghlf/test-network$ 
+
 ```
 
