@@ -110,16 +110,15 @@ source ./scripts/setPeerConnectionParam.sh 1 2
 source ./scripts/setOrgPeerContext.sh 1
 ```
 
-### Creating a Test-Network, Channel and Installing the chaincode
+### Interacting with Chaincode
 
-10. Quert the Property - using QueryProp function - one example below;
-
+#### Query the Property Details - using QueryProp function - one example below;
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n landreg $PEER_CONN_PARAMS -c '{"function":"QueryProp","Args":["PROP1"]}'
 ```
 
-### Output will look like below;
+#### Output will look like below;
 
 ```JPEG
 
