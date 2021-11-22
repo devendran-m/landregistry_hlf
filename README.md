@@ -1,4 +1,4 @@
-# Project Title
+# Land Registry on Hyperledger Fabric
 
 ## Table of Contents
 
